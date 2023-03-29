@@ -1,8 +1,9 @@
 function [returnX, returnY] = Euler(m, x0, y0, X_prim0, Y_prim0, h)
     X_prim = X_prim0;
     Y_prim = Y_prim0;
-    x = x0
-    y = y0
+    x = x0;
+    y = y0;
+    t = 0;
     
     returnX = [];
     returnY = [];
@@ -17,7 +18,8 @@ function [returnX, returnY] = Euler(m, x0, y0, X_prim0, Y_prim0, h)
 
         x = x + X_prim * h;
         y = y + Y_prim * h;
-        returnX = [returnX; x];
-        returnY = [returnY; y];
+        returnX = [returnX; t, x];
+        returnY = [returnY; t, y];
+        t = t + h;
     end
 end
