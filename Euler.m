@@ -1,7 +1,12 @@
-function [y, x] = Euler(m, x0, y0, X_prim0, Y_prim0, h)
+function [returnX, returnY] = Euler(m, x0, y0, X_prim0, Y_prim0, h)
     X_prim = X_prim0;
     Y_prim = Y_prim0;
-    x = 0
+    x = x0
+    y = y0
+    
+    returnX = [];
+    returnY = [];
+
     while x < 2.37
         V = sqrt(X_prim * X_prim + Y_prim * Y_prim);
         X_bis = (-0.002*X_prim*V)/m;
@@ -10,7 +15,9 @@ function [y, x] = Euler(m, x0, y0, X_prim0, Y_prim0, h)
         X_prim = X_prim + X_bis * h;
         Y_prim = Y_prim + Y_bis * h;
 
-        x = [x; x + X_prim * h];
-        y = [y; y + Y_prim * h];
+        x = x + X_prim * h;
+        y = y + Y_prim * h;
+        returnX = [returnX; x];
+        returnY = [returnY; y];
     end
 end
