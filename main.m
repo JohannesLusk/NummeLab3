@@ -1,8 +1,8 @@
-clear
+
 
 X0 = 0;
 Y0 = 1.84;
-degree = 4;
+degree = 8.0036e+01;
 theta = pi*degree/180;
 V0 = 15;
 X_prim0 = V0 * cos(theta);
@@ -13,7 +13,7 @@ step = 0.01;
 etrunk = 1;
 
 
-while abs(etrunk) > 1e-5 % error smaller than 1 mm, since all units are in meters
+while abs(etrunk) > 1e-3 % error smaller than 1 mm, since all units are in meters
 
     [plotX1, plotY1] = Euler(m, X0, Y0, X_prim0, Y_prim0, step,Xend);
     [plotX2, plotY2] = Euler(m, X0, Y0, X_prim0, Y_prim0, step/2,Xend);
