@@ -1,4 +1,4 @@
-function [returnX, returnY] = Euler(m, x0, y0, X_prim0, Y_prim0, h)
+function [returnX, returnY] = Euler(m, x0, y0, X_prim0, Y_prim0, h,dist)
     X_prim = X_prim0;
     Y_prim = Y_prim0;
     x = x0;
@@ -8,7 +8,7 @@ function [returnX, returnY] = Euler(m, x0, y0, X_prim0, Y_prim0, h)
     returnX = [];
     returnY = [];
 
-    while x < 2.37
+    while x <= dist
         V = sqrt(X_prim * X_prim + Y_prim * Y_prim);
         X_bis = (-0.002*X_prim*V)/m;
         Y_bis = (-9.82*m-0.02*Y_prim*V)/m;
