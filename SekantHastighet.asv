@@ -4,7 +4,7 @@ function [V, E] = SekantHastighet(startVelocity0, startVelocity1, degree)
  f1 = f0 + 1;
  etrunk = abs(f0-f1);
 
- while etrunk > 1e-6
+ while etrunk > 1e-5
       f1 = ComputeEulervsAngle(degree,1e-3,startVelocity1);
       f1 = f1 - 1.83;
      t_n = f1*((startVelocity1-startVelocity0)/(f1-f0));

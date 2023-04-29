@@ -5,8 +5,8 @@ function [returnX, returnY] = Euler(m, x0, y0, X_prim0, Y_prim0, h,dist)
     y = y0;
     t = 0;
     
-    returnX = [];
-    returnY = [];
+    % returnX = [];
+    % returnY = [];
 
     while x <= dist
         V = sqrt(X_prim * X_prim + Y_prim * Y_prim);
@@ -18,8 +18,10 @@ function [returnX, returnY] = Euler(m, x0, y0, X_prim0, Y_prim0, h,dist)
 
         x = x + X_prim * h;
         y = y + Y_prim * h;
-        returnX = [returnX; t, x];
-        returnY = [returnY; t, y];
+        %returnX = [returnX; t, x];
+        %returnY = [returnY; t, y];
         t = t + h;
     end
+    returnX = x;
+    returnY = y;
 end

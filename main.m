@@ -2,13 +2,13 @@
 
 X0 = 0;
 Y0 = 1.84;
-degree = 8.0036e+01;
+degree = 10;
 theta = pi*degree/180;
-V0 = 15;
+V0 = 1.7389e+01;
 X_prim0 = V0 * cos(theta);
 Y_prim0 = V0 * sin(theta);
 Xend = 2.37;
-m = 20/1000; % mass in Kg
+m = 40/1000; % mass in Kg
 step = 0.01;
 etrunk = 1;
 
@@ -25,6 +25,9 @@ end
 
 plot(plotX2(:,2),plotY2(:,2))
 axis([0 2.38 0 3]);
+xlabel("X");
+ylabel("Höjd");
+title("Kastbana för en pil med vikt på 40g")
 
 disp('   Y_land       stepLen      etrunk')
 format short e
