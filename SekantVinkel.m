@@ -18,11 +18,10 @@ function [Degree, E] = SekantVinkel(degree0,degree1,V)
         f0 = f1;
      end
  end
- "Höjd Vinkel1: " + ComputeEulervsAngle(degree0,1e-3,V)
-  "Höjd Vinkel2: " + ComputeEulervsAngle(degree1,1e-3,V)
- x = f0/(f1-f0);
+ f0 = f1 + 1.83;
+ f1 = ComputeEulervsAngle(degree1,1e-3,V);
+ x = (1.83-f0)/(f1-f0);
  Degree = degree0 + (degree1-degree0)*x;
- "Höjd Vinkel : " + ComputeEulervsAngle(Degree,1e-3,V)
  %YLand = f0 + (f1-f0)*x + 1.83
 
  E = abs(degree1-degree0);
