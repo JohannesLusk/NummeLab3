@@ -7,7 +7,7 @@ function [Degree, E] = SekantVinkel(degree0,degree1,V)
  f1 = f0 + 1;
  etrunk = abs(f0-f1);
 
- while etrunk > 1e-2
+ while etrunk > 1e-3
       f1 = ComputeEulervsAngle(degree1,1e-3,V);
       f1 = f1 - 1.83;
      t_n = f1*((degree1-degree0)/(f1-f0));
