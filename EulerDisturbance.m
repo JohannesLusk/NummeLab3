@@ -41,13 +41,13 @@ for i = 1:length(parameters)
     while abs(etrunk) > 1e-3 % error smaller than 1 mm, since all units are in meters
 
     [X1, Y1] = EulerParams(m,X0, parameters(2),X_prim0, Y_prim0, step,parameters(1),parameters(6),parameters(7),parameters(8));
-    [X2, Y2] = EulerParams(m,X0, parameters(2),X_prim0, Y_prim0, step/2,parameters(1),parameters(6),parameters(7),parameters(8));;
+    [X2, Y2] = EulerParams(m,X0, parameters(2),X_prim0, Y_prim0, step/2,parameters(1),parameters(6),parameters(7),parameters(8));
     etrunk = Y1- Y2;
     step = step/2;
     end 
     deltas(i) = Y_refLand - Y2;
 
-    parameters(i) = parameters(i)-disturbances(i)
+    parameters(i) = parameters(i)-disturbances(i);
 end 
 Einput = deltas;
 
